@@ -405,6 +405,7 @@
 				E42C399C1A09B9A800CA5968 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E42C399D1A09B9A800CA5968 /* Build configuration list for PBXNativeTarget "tumblrTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +414,7 @@
 				E42C399F1A09B9A800CA5968 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
