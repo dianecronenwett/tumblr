@@ -10,6 +10,7 @@ import UIKit
 
 class TrendingViewController: UIViewController {
 
+    @IBOutlet weak var trendFeed: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +21,9 @@ class TrendingViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBOutlet weak var trendScrollFeed: UIScrollView!
+
     
 
     /*
