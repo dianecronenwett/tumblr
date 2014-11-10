@@ -8,13 +8,20 @@
 
 import UIKit
 
-class TrendingViewController: UIViewController {
+class TrendingViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var trendFeed: UIImageView!
+    @IBOutlet weak var trendScrollFeed: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+ 
+        var containerHeight = trendFeed.frame.height
+      
+        trendScrollFeed.delegate = self
+        trendScrollFeed.contentSize.height = containerHeight
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,7 +29,7 @@ class TrendingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet weak var trendScrollFeed: UIScrollView!
+ 
 
     
 
