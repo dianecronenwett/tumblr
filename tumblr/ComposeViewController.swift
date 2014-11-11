@@ -2,7 +2,7 @@
 //  ComposeViewController.swift
 //  tumblr
 //
-//  Created by diane cronenwett on 11/8/14.
+//  Created by diane cronenwett on 11/10/14.
 //  Copyright (c) 2014 dianesorg. All rights reserved.
 //
 
@@ -10,6 +10,10 @@ import UIKit
 
 class ComposeViewController: UIViewController {
 
+    @IBAction func nevermindButton(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

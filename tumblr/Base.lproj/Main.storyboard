@@ -16,12 +16,13 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YF5-sD-r0p">
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YF5-sD-r0p">
                                         <rect key="frame" x="10" y="5" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="home_icon">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" image="home_selected_icon"/>
                                         <connections>
                                             <action selector="homeButton:" destination="Wbc-Q7-vrE" eventType="touchUpInside" id="4a3-5n-gMd"/>
                                         </connections>
@@ -32,6 +33,7 @@
                                         <state key="normal" image="search_icon">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" image="search_selected_icon"/>
                                         <connections>
                                             <action selector="searchButton:" destination="Wbc-Q7-vrE" eventType="touchUpInside" id="30T-Jg-4Pm"/>
                                         </connections>
@@ -43,7 +45,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="composeButton:" destination="Wbc-Q7-vrE" eventType="touchUpInside" id="Ker-YS-YGT"/>
+                                            <segue destination="HD0-8M-FGd" kind="modal" id="Mdk-hl-tqy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oVE-dw-E1i">
@@ -52,6 +54,7 @@
                                         <state key="normal" image="account_icon">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" image="account_selected_icon"/>
                                         <connections>
                                             <action selector="accountButton:" destination="Wbc-Q7-vrE" eventType="touchUpInside" id="7n5-tR-x6Q"/>
                                         </connections>
@@ -62,6 +65,7 @@
                                         <state key="normal" image="trending_icon">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" image="trending_selected_icon"/>
                                         <connections>
                                             <action selector="trendingButton:" destination="Wbc-Q7-vrE" eventType="touchUpInside" id="UzX-e0-7Dj"/>
                                         </connections>
@@ -77,6 +81,7 @@
                     </view>
                     <connections>
                         <outlet property="containerView" destination="EUm-a1-yrz" id="o0q-8V-ThG"/>
+                        <outlet property="homeButton" destination="YF5-sD-r0p" id="hBb-2s-1JU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OcV-PV-QAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -252,11 +257,14 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bv5-Ln-lT3">
-                                        <rect key="frame" x="0.0" y="475" width="320" height="53"/>
+                                        <rect key="frame" x="0.0" y="515" width="320" height="53"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="nevermind">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="nevermindButton:" destination="HD0-8M-FGd" eventType="touchUpInside" id="Mt4-bx-UsB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.28727693119999997" green="0.37906827360000001" blue="0.50003985969999998" alpha="0.69000000000000006" colorSpace="calibratedRGB"/>
@@ -269,29 +277,17 @@
             </objects>
             <point key="canvasLocation" x="1120" y="37"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="cm9-ve-wPt">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="dLB-ai-znE" sceneMemberID="viewController">
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="apd-QN-U06">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wKU-t7-Zgj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="account" width="320" height="524"/>
         <image name="account_icon" width="35" height="35"/>
+        <image name="account_selected_icon" width="35" height="35"/>
         <image name="chat_icon" width="75" height="96"/>
         <image name="compose_button" width="50" height="35"/>
         <image name="home" width="320" height="524"/>
         <image name="home_icon" width="35" height="35"/>
         <image name="home_overlay" width="320" height="100"/>
+        <image name="home_selected_icon" width="35" height="35"/>
         <image name="home_spinner" width="146" height="146"/>
         <image name="link_icon" width="75" height="95"/>
         <image name="nevermind" width="320" height="53"/>
@@ -299,9 +295,11 @@
         <image name="quote_icon" width="75" height="96"/>
         <image name="search_feed" width="320" height="524"/>
         <image name="search_icon" width="35" height="35"/>
+        <image name="search_selected_icon" width="35" height="35"/>
         <image name="text_icon" width="75" height="95"/>
         <image name="trending_feed" width="320" height="1217"/>
         <image name="trending_icon" width="35" height="35"/>
+        <image name="trending_selected_icon" width="35" height="35"/>
         <image name="video_icon" width="75" height="95"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -13,17 +13,15 @@ class TrendingViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var trendFeed: UIImageView!
     @IBOutlet weak var trendScrollFeed: UIScrollView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
- 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
         var containerHeight = trendFeed.frame.height
-      
+        
         trendScrollFeed.delegate = self
         trendScrollFeed.contentSize.height = containerHeight
-        
-        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
