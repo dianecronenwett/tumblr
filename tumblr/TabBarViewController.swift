@@ -16,7 +16,9 @@ class TabBarViewController: UIViewController {
     var composeViewController: UIViewController!
     var accountViewController: UIViewController!
     var trendingViewController: UIViewController!
-    var selectedButton: UIButton!
+    
+    var selectedButton: UIButton!   // Keep track of what button is selected
+    var currentViewController: UIViewController!
 
     @IBOutlet weak var homeButton: UIButton!
     
@@ -27,7 +29,9 @@ class TabBarViewController: UIViewController {
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         homeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
         homeViewController.view.frame = containerView.frame
+        
         selectedButton = homeButton
+        currentViewController = homeViewController
         
         searchViewController = storyboard.instantiateViewControllerWithIdentifier("SearchViewController") as UIViewController
         searchViewController.view.frame = containerView.frame
@@ -72,10 +76,17 @@ class TabBarViewController: UIViewController {
         selectView(trendingViewController, sender: sender)
     }
 
-    func selectView(viewController: UIViewController, sender: UIButton) {
+    func selectView(newViewController: UIViewController, sender: UIButton) {
         selectedButton.selected = false
         selectedButton = sender
         selectedButton.selected = true
-        containerView.addSubview(viewController.view)
+        
+        currentViewController.view.removeFromSuperview()
+        containerView.addSubview(newViewController.view)
+        
+        currentViewController.removeFromParentViewController()
+        self.addChildViewController(newViewController)
+        
+        currentViewController = newViewController
     }
 }

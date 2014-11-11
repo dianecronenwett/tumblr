@@ -76,6 +76,9 @@
                             <containerView opaque="NO" contentMode="scaleToFill" id="EUm-a1-yrz">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="ovK-bT-0B5" kind="embed" id="sjm-x0-t0W"/>
+                                </connections>
                             </containerView>
                         </subviews>
                     </view>
@@ -93,11 +96,10 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="ovK-bT-0B5" customClass="HomeViewController" customModule="tumblr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D3i-hO-dwr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="2Me-BR-yVW">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.25882352939999997" blue="0.3294117647" alpha="1" colorSpace="deviceRGB"/>
                             </view>
