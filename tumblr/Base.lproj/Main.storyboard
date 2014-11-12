@@ -80,10 +80,15 @@
                                     <segue destination="ovK-bT-0B5" kind="embed" id="sjm-x0-t0W"/>
                                 </connections>
                             </containerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="explore_popup" id="Wjy-wV-dQe">
+                                <rect key="frame" x="0.0" y="447" width="185" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="EUm-a1-yrz" id="o0q-8V-ThG"/>
+                        <outlet property="explorePopup" destination="Wjy-wV-dQe" id="Cp2-SC-keB"/>
                         <outlet property="homeButton" destination="YF5-sD-r0p" id="hBb-2s-1JU"/>
                     </connections>
                 </viewController>
@@ -287,6 +292,7 @@
         <image name="account_selected_icon" width="35" height="35"/>
         <image name="chat_icon" width="75" height="96"/>
         <image name="compose_button" width="50" height="35"/>
+        <image name="explore_popup" width="185" height="77"/>
         <image name="home" width="320" height="524"/>
         <image name="home_icon" width="35" height="35"/>
         <image name="home_overlay" width="320" height="100"/>

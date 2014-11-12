@@ -24,19 +24,29 @@ class TabBarViewController: UIViewController,UIViewControllerTransitioningDelega
 
     @IBOutlet weak var homeButton: UIButton!
     
+    @IBOutlet weak var explorePopup: UIImageView!
+   
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //explorePopup.hidden = true
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         homeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
         homeViewController.view.frame = containerView.frame
         
+
         selectedButton = homeButton
         currentViewController = homeViewController
         
         searchViewController = storyboard.instantiateViewControllerWithIdentifier("SearchViewController") as UIViewController
         searchViewController.view.frame = containerView.frame
+        
+        UIView.animateWithDuration(0.6, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.Autoreverse | UIViewAnimationOptions.Repeat, animations: { () -> Void in
+            self.explorePopup.frame.offset(dx: 0, dy: -10)
+        }, completion: nil)
+       
         
 //        composeViewController = storyboard.instantiateViewControllerWithIdentifier("ComposeViewController") as UIViewController
 //        composeViewController.view.frame = containerView.frame
@@ -44,13 +54,13 @@ class TabBarViewController: UIViewController,UIViewControllerTransitioningDelega
         
         accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as UIViewController
         accountViewController.view.frame = containerView.frame
-
+       
         
         trendingViewController = storyboard.instantiateViewControllerWithIdentifier("TrendingViewController") as UIViewController
         trendingViewController.view.frame = containerView.frame
 
         
-
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
@@ -99,17 +109,24 @@ class TabBarViewController: UIViewController,UIViewControllerTransitioningDelega
         isPresenting = false
         return self
     }       
-
+ 
+    
 
     @IBAction func homeButton(sender: UIButton) {
         //shows the dynamic view in the container by adding a subview
         selectView(homeViewController, sender: sender)
+        explorePopup.hidden = false
     }
 
     @IBAction func searchButton(sender: UIButton) {
         //shows the dynamic view in the container by adding a subview
         selectView(searchViewController, sender: sender)
+        explorePopup.hidden = true
     }
+    
+
+    
+
     
 //    @IBAction func composeButton(sender: UIButton) {
 //        //shows the dynamic view in the container by adding a subview
@@ -119,11 +136,13 @@ class TabBarViewController: UIViewController,UIViewControllerTransitioningDelega
     @IBAction func accountButton(sender: UIButton) {
         //shows the dynamic view in the container by adding a subview
         selectView(accountViewController, sender: sender)
+        explorePopup.hidden = false
     }
     
     @IBAction func trendingButton(sender: UIButton) {
         //shows the dynamic view in the container by adding a subview
         selectView(trendingViewController, sender: sender)
+        explorePopup.hidden = false
     }
 
     func selectView(newViewController: UIViewController, sender: UIButton) {
