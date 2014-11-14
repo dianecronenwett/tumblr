@@ -280,6 +280,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="iconView" destination="33p-0C-MxP" id="bA1-Nk-HUZ"/>
+                        <outlet property="textButton" destination="mnk-Hk-bgi" id="JWP-jG-S1u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1f-lZ-ORE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

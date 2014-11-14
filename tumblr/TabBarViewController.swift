@@ -31,7 +31,7 @@ class TabBarViewController: UIViewController,UIViewControllerTransitioningDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //explorePopup.hidden = true
+        
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         homeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
         homeViewController.view.frame = containerView.frame
@@ -43,8 +43,8 @@ class TabBarViewController: UIViewController,UIViewControllerTransitioningDelega
         searchViewController = storyboard.instantiateViewControllerWithIdentifier("SearchViewController") as UIViewController
         searchViewController.view.frame = containerView.frame
         
-        UIView.animateWithDuration(0.6, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.Autoreverse | UIViewAnimationOptions.Repeat, animations: { () -> Void in
-            self.explorePopup.frame.offset(dx: 0, dy: -10)
+        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.7, options: UIViewAnimationOptions.Autoreverse | UIViewAnimationOptions.Repeat, animations: { () -> Void in
+            self.explorePopup.frame.offset(dx: 0, dy: -60)
         }, completion: nil)
        
         
@@ -87,14 +87,30 @@ class TabBarViewController: UIViewController,UIViewControllerTransitioningDelega
         var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
         
         if (isPresenting) {
+            
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
             UIView.animateWithDuration(0.4, animations: { () -> Void in
                 toViewController.view.alpha = 1
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
+             
+            //add statement around "as viewController"
+//            var originalY = self.textButton.frame.origin.y
+//                    self.textButton.frame.origin.y = 600
+//                    UIView.animateWithDuration(1, delay: 1, options: .CurveEaseOut, animations: {
+//                        self.textButton.frame.origin.y = originalY
+//                        }, completion: { finished in
+//                            
+                    
+                  //  })
+
+                    
             }
+            
+            
         } else {
+            println("dismissing")
             UIView.animateWithDuration(0.4, animations: { () -> Void in
                 fromViewController.view.alpha = 0
                 }) { (finished: Bool) -> Void in
